@@ -117,36 +117,6 @@ button {
     margin-top: 2px;
 }
 
-.food-name {
-    font-size: 22px;
-    font-weight: 800;
-    color: #7c2d12;
-    margin-bottom: 10px;
-}
-
-.actions {
-    display: flex;
-    gap: 8px;
-    margin-top: 12px;
-}
-
-.actions form { margin: 0; }
-
-.small-btn {
-    padding: 9px 12px;
-    font-size: 14px;
-}
-
-.small-btn.edit {
-    background: #ffedd5;
-    color: #c2410c;
-}
-
-.small-btn.delete {
-    background: #fee2e2;
-    color: #b91c1c;
-}
-
 .edit-form {
     display: none;
     margin-top: 12px;
@@ -170,4 +140,53 @@ button {
     .page { padding: 34px; }
     .card { padding: 28px; }
     .add-form, .edit-form { grid-template-columns: 1fr auto; }
+}
+.top-line{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+}
+
+.actions-inline{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    flex-shrink:0;
+}
+
+.actions-inline form{
+    margin:0;
+}
+
+.tiny-btn{
+    border:none;
+    border-radius:10px;
+    padding:5px 10px;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.tiny-btn.edit{
+    background:#ffedd5;
+    color:#c2410c;
+}
+
+.tiny-btn.delete{
+    background:#fee2e2;
+    color:#b91c1c;
+}
+
+.menu-count{
+    display:block;
+    margin-top:6px;
+    color:#9a6b3d;
+    font-size:15px;
+}
+
+.food-name{
+    font-size:22px;
+    font-weight:800;
+    color:#7c2d12;
 }
