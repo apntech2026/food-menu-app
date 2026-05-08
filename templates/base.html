@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}เมนูกับข้าว{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="page">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script>
+        function toggleEdit(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.classList.toggle("show");
+            }
+        }
+    </script>
+</body>
+</html>
