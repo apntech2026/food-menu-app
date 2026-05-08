@@ -246,3 +246,10 @@ button {
     transform:translateY(-2px);
     box-shadow:0 12px 24px rgba(120,53,15,.10);
 }
+.total-count{
+    text-align:center;
+    color:#9a6b3d;
+    font-size:14px;
+    font-weight:700;
+    margin:-4px 0 18px;
+}

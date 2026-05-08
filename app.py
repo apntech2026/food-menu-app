@@ -132,7 +132,14 @@ def init_db():
 @app.route("/")
 def index():
     categories = Category.query.order_by(Category.id).all()
-    return render_template("index.html", categories=categories)
+
+    total_foods = sum(len(category.foods) for category in categories)
+
+    return render_template(
+        "index.html",
+        categories=categories,
+        total_foods=total_foods
+    )
 
 
 @app.route("/category/add", methods=["POST"])
