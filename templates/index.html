@@ -26,25 +26,21 @@
         {% for category in categories %}
 
             <div class="row">
-
                 <div class="top-line">
-
                     <a class="main-link"
-                       href="{{ url_for('category', category_id=category.id) }}">
+                        href="{{ url_for('category', category_id=category.id) }}">
                         <strong>{{ category.name }}</strong>
+                        <span class="menu-count">
+                            มีทั้งหมด {{ category.foods|length }} เมนู
+                        </span>
                     </a>
-
                     <button class="tiny-btn edit"
                             type="button"
                             onclick="toggleEdit('edit-category-{{ category.id }}')">
                         แก้ไข
                     </button>
 
-                </div>
-
-                <span class="menu-count">
-                    มีทั้งหมด {{ category.foods|length }} เมนู
-                </span>
+                </div>       
 
                 <form id="edit-category-{{ category.id }}"
                       class="edit-form"
