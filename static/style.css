@@ -48,12 +48,28 @@ h1 {
     line-height: 1.15;
 }
 
-.back {
-    display: inline-block;
-    margin-bottom: 16px;
-    color: #ea580c;
-    text-decoration: none;
-    font-weight: 800;
+.back{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:52px;
+    padding:12px 18px;
+    margin-bottom:22px;
+
+    background:#fff7ed;
+    border:1px solid #fed7aa;
+    border-radius:18px;
+
+    color:#ea580c;
+    text-decoration:none;
+    font-weight:800;
+    font-size:18px;
+
+    box-shadow:0 8px 18px rgba(120,53,15,.08);
+}
+
+.back:active{
+    transform:scale(.98);
 }
 
 .add-form, .edit-form {
