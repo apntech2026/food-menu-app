@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+<section class="card">
+    <a class="back" href="{{ url_for('index') }}">← กลับไปเลือกประเภท</a>
+
+    <div class="header">
+        <div>
+            <p class="eyebrow">ประเภท</p>
+            <h1>{{ category.name }}</h1>
+        </div>
+    </div>
+
+    <form class="add-form" action="{{ url_for('add_food', category_id=category.id) }}" method="post">
+        <input type="text" name="name" placeholder="เพิ่มเมนูกับข้าว" required>
+        <button type="submit">+ เพิ่มเมนู</button>
+    </form>
+
+    <div class="list">
+        {% for food in foods %}
+            <div class="row">
+                <div class="food-name">
+                    {{ food.name }}
+                </div>
+
+                <div class="actions">
+                    <button class="small-btn edit" type="button" onclick="toggleEdit('edit-food-{{ food.id }}')">
+                        แก้ไข
+                    </button>
+
+                    <form action="{{ url_for('delete_food', category_id=category.id, food_id=food.id) }}" method="post" onsubmit="return confirm('ลบเมนูนี้ใช่ไหม?')">
+                        <button class="small-btn delete" type="submit">ลบ</button>
+                    </form>
+                </div>
+
+                <form id="edit-food-{{ food.id }}" class="edit-form" action="{{ url_for('edit_food', category_id=category.id, food_id=food.id) }}" method="post">
+                    <input type="text" name="name" value="{{ food.name }}" required>
+                    <button type="submit">บันทึก</button>
+                </form>
+            </div>
+        {% else %}
+            <div class="empty">
+                ยังไม่มีเมนูในประเภทนี้
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
