@@ -1,16 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}เลือกประเภทกับข้าว{% endblock %}
+{% block title %}เมนูกับข้าวบ้านนุ่นแอม{% endblock %}
 
 {% block content %}
 <section class="card">
 
-    <div class="header">
-        <div>
-            <p class="eyebrow">เมนูกับข้าว</p>
-            <h1>เลือกประเภท</h1>
-        </div>
-    </div>
+    <h1 class="main-title">เมนูกับข้าวบ้านนุ่นแอม</h1>
 
     <form class="add-form"
           action="{{ url_for('add_category') }}"
@@ -36,37 +31,19 @@
 
                     <a class="main-link"
                        href="{{ url_for('category', category_id=category.id) }}">
-
                         <strong>{{ category.name }}</strong>
-
                     </a>
 
-                    <div class="actions-inline">
-
-                        <button class="tiny-btn edit"
-                                type="button"
-                                onclick="toggleEdit('edit-category-{{ category.id }}')">
-
-                            แก้ไข
-
-                        </button>
-
-                        <form action="{{ url_for('delete_category', category_id=category.id) }}"
-                              method="post"
-                              onsubmit="return confirm('ลบประเภทนี้พร้อมเมนูทั้งหมดใช่ไหม?')">
-
-                            <button class="tiny-btn delete" type="submit">
-                                ลบ
-                            </button>
-
-                        </form>
-
-                    </div>
+                    <button class="tiny-btn edit"
+                            type="button"
+                            onclick="toggleEdit('edit-category-{{ category.id }}')">
+                        แก้ไข
+                    </button>
 
                 </div>
 
                 <span class="menu-count">
-                    {{ category.food_count }} เมนู
+                    มีทั้งหมด {{ category.food_count }} เมนู
                 </span>
 
                 <form id="edit-category-{{ category.id }}"
